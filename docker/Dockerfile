@@ -39,8 +39,8 @@ RUN apt-get -qqy update \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 # Update entrypoint
-COPY docker/supervisor.conf /etc/supervisor/conf.d/selenium.conf
-COPY docker/supervisor-gui.conf /etc/supervisor/conf.d/gui.conf
+COPY supervisor.conf /etc/supervisor/conf.d/selenium.conf
+COPY supervisor-gui.conf /etc/supervisor/conf.d/gui.conf
 
 # If no gui
 RUN if [ "$G4F_NO_GUI" ] ; then \
